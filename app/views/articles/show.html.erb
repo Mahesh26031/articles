@@ -1,0 +1,22 @@
+<h1><%= @article.title %></h1>
+
+<p><%= @article.desc %></p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
+
+<%= form_with(model: [@article, @comment], local: true) do |form| %>
+
+  
+    <div class="field">
+      <%= form.label :body %>
+      <%= form.text_area :body, required: true %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+
+
+  <% end %>
+  
